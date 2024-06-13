@@ -70,6 +70,21 @@ return {
 		'neovim/nvim-lspconfig',
 	},
 
+  {
+    'nvimtools/none-ls.nvim',
+    event = 'VeryLazy',
+    config = function()
+      local null_ls = require('null-ls')
+      null_ls.setup({
+        sources = {
+          null_ls.builtins.formatting.stylua,
+          null_ls.builtins.completion.spell,
+          -- require('none-ls.diagnostics.eslint'),
+        }
+      })
+    end,
+  },
+
 	{
 		'folke/tokyonight.nvim',
 		lazy = false,
@@ -269,6 +284,58 @@ return {
       config = function()
         require('neoscroll').setup({})
       end,
-    }
+    },
+
+    {
+      'akinsho/bufferline.nvim',
+      version = "*",
+      dependencies = 'nvim-tree/nvim-web-devicons',
+      event = 'VeryLazy',
+      config = function()
+        require('bufferline').setup{
+          options = {
+            diagnostics = "nvim_lsp",
+            separator_style = "slant",
+          }
+        }
+      end
+    },
+
+    -- Comment
+    {
+      'JoosepAlviste/nvim-ts-context-commentstring',
+      event = 'VeryLazy',
+      config = function()
+        require('ts_context_commentstring').setup{
+          enable_autocmd = false,
+        }
+      end
+    },
+    {
+      'numToStr/Comment.nvim',
+      event = 'VeryLazy',
+      config = function()
+        require('Comment').setup {
+          pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+        }
+      end
+    },
+
+    -- {
+    --   'booperlv/nvim-gomove',
+    --   event = 'VeryLazy',
+    --   config = function()
+    --     require('gomove').setup{
+    --       -- whether or not to map default key bindings, (true/false)
+    --       map_defaults = true,
+    --       -- whether or not to reindent lines moved vertically (true/false)
+    --       reindent = true,
+    --       -- whether or not to undojoin same direction moves (true/false)
+    --       undojoin = true,
+    --       -- whether to not to move past end column when moving blocks horizontally, (true/false)
+    --       move_past_end_col = false,
+    --   }
+    -- end
+    -- },
 
 }
