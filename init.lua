@@ -15,6 +15,9 @@ vim.opt.termguicolors = true
 -- Set search ignorecase
 vim.opt.ignorecase = true
 
+-- Set maximum textwidth
+-- vim.opt.textwidth = 80
+
 -- Lazy
 require('lazyvim')
 

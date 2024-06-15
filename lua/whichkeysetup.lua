@@ -30,7 +30,7 @@ wk.register({
 
   l = {
     name = 'Language',
-    f = { '<cmd>lua vim.lsp.buf.format()<cr>', 'Format current buffer' }
+    f = { '<cmd>lua vim.lsp.buf.format()<cr>', 'Format current buffer' },
   }
 
 },

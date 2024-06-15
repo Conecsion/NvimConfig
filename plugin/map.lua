@@ -44,3 +44,9 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Toggle Comment.nvim
 keymap('n', '<Leader>/', 'gcc', { remap = true })
 keymap('v', '<Leader>/', 'gc', { remap = true })
+
+-- Renamer
+keymap('n', '<Leader>lr', function()
+  return ":IncRename " .. vim.fn.expand("<cword>")
+end, { expr = true })
+-- keymap('n', '<leader>lr', ":IncRename ")

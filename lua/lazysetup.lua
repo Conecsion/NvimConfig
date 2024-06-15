@@ -407,5 +407,32 @@ return {
     config = function()
       require('goto-preview').setup {}
     end
-  }
+  },
+
+  {
+    'gorbit99/codewindow.nvim',
+    config = function()
+      local codewindow = require('codewindow')
+      codewindow.setup(
+        {
+          auto_enable = true,
+          screen_bounds = 'background',
+          window_border = 'rounded',
+          exclude_filetypes = { 'help', 'dashboard' }
+        }
+      )
+      codewindow.apply_default_keybinds()
+    end
+  },
+
+  {
+    'smjonas/inc-rename.nvim',
+    config = function()
+      require("inc_rename").setup{
+        input_buffer_type = 'dressing',
+      }
+    end,
+  },
+
+  { 'HiPhish/rainbow-delimiters.nvim', }
 }
