@@ -21,8 +21,6 @@ require('lazyvim')
 -- lsp misc
 require('custom.lsp.lsp_config')
 
--- Set colorscheme
--- vim.cmd[[colorscheme tokyonight]]
 
 -- Set TabStop
 vim.o.tabstop = 2 -- A TAB character looks like 2 spaces
@@ -32,11 +30,11 @@ vim.o.shiftwidth = 2 -- Number of spaces inserted when indenting
 
 
 -- Enable nvim-notify
-vim.notify = require('notify')
+-- vim.notify = require('notify')
 
 -- NvimTree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- nvim-cmp
-require('cmpconfig')
+require('custom.lsp.cmpconfig')
