@@ -40,3 +40,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+
+-- Toggle Comment.nvim
+keymap('n', '<Leader>/', 'gcc', { remap = true })
+keymap('v', '<Leader>/', 'gc', { remap = true })

@@ -26,7 +26,13 @@ wk.register({
   b = {
     name = 'Buffer',
     c = { '<cmd>bd<cr>', 'Close Current Buffer' },
+  },
+
+  l = {
+    name = 'Language',
+    f = { '<cmd>lua vim.lsp.buf.format()<cr>', 'Format current buffer' }
   }
+
 },
   { prefix = "<leader>", mode = "n" }
 )

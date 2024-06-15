@@ -53,11 +53,11 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
-  }, {
     { name = 'buffer' },
     { name = 'path' },
     { name = 'copilot', group_index = 2},
-  })
+  }
+  )
   })
 
   cmp.setup.cmdline(':', {
