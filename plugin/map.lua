@@ -2,9 +2,7 @@ local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 local keymap = vim.keymap.set
 vim.keymap.set({'i','v'},'jk','<Esc>')
--- vim.keymap.set('n','<Leader>w', ':w<cr>')
--- vim.keymap.set('n','<Leader>q', ':q<cr>')
-vim.keymap.set('n', 'wk', ':q<cr>')
+vim.keymap.set({'i','v'},'kj','<Esc>')
 
 -- Toggle Nvim Tree
 vim.keymap.set('n', '<F3>', ':NvimTreeToggle<cr>')
