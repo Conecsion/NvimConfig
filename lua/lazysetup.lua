@@ -415,7 +415,7 @@ return {
       local codewindow = require('codewindow')
       codewindow.setup(
         {
-          auto_enable = true,
+          auto_enable = false,
           screen_bounds = 'background',
           window_border = 'rounded',
           exclude_filetypes = { 'help', 'dashboard' }
