@@ -434,5 +434,16 @@ return {
     end,
   },
 
-  { 'HiPhish/rainbow-delimiters.nvim', }
+  { 'HiPhish/rainbow-delimiters.nvim', },
+
+  {
+    'kylechui/nvim-surround',
+    version = '*',
+    event = 'VeryLazy',
+    config = function()
+      require('nvim-surround').setup({
+
+      })
+    end
+  },
 }
